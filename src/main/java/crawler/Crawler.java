@@ -102,11 +102,6 @@ public class Crawler {
             System.out.println("------ :\t\t" + URL+"\t\t: ------");
             Document doc = null;
 
-            try{
-                Thread.sleep(delay * 1000);
-            }catch(InterruptedException ie){
-                
-            }
 
             try {
                 doc = Jsoup.connect(URL).userAgent(USER_AGENT_MAC).get();
@@ -132,6 +127,13 @@ public class Crawler {
                 e1.printStackTrace();
                 return null;
             }
+
+            try{
+                Thread.sleep(delay * 1000);
+            }catch(InterruptedException ie){
+                
+            }
+
         System.out.println("HA  "+resultList.size());
             return resultList;
     }
